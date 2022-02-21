@@ -23,8 +23,8 @@ struct ContentView: View {
                 }
             }
         }
-        .bottomSheet(isPresented: $isPresented, onDismiss: { isPresented = false }) {
-            DetailsView(model: $chosenModel, onDismiss: { isPresented = false })
-        }
+//        .bottomSheet(isPresented: $isPresented, onDismiss: { isPresented = false }) {
+//            DetailsView(model: $chosenModel, onDismiss: { isPresented = false })
+//        }
     }
 }
