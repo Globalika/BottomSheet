@@ -7,13 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    var window: UIWindow?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = ViewController()
+        window.makeKeyAndVisible()
+        self.window = window
     }
-
-
 }
-

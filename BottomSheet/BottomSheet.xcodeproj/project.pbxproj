@@ -12,6 +12,9 @@
 		8966710C27C424ED005DC831 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966710B27C424ED005DC831 /* ViewController.swift */; };
 		8966711227C424ED005DC831 /* BottomSheet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8966711027C424ED005DC831 /* BottomSheet.xcdatamodeld */; };
 		8966711427C424EF005DC831 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8966711327C424EF005DC831 /* Assets.xcassets */; };
+		8966712427C42E42005DC831 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966712327C42E42005DC831 /* ContentView.swift */; };
+		8966712627C42E53005DC831 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966712527C42E53005DC831 /* DetailsView.swift */; };
+		8966712827C42EB6005DC831 /* DetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966712727C42EB6005DC831 /* DetailsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		8966711127C424ED005DC831 /* BottomSheet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BottomSheet.xcdatamodel; sourceTree = "<group>"; };
 		8966711327C424EF005DC831 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8966711827C424EF005DC831 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8966712327C42E42005DC831 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8966712527C42E53005DC831 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		8966712727C42EB6005DC831 /* DetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,11 @@
 		8966710627C424ED005DC831 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
+				8966712227C42E21005DC831 /* ViewExtensions */,
+				8966712127C42E0F005DC831 /* ViewModifiers */,
+				8966712027C42E00005DC831 /* ViewControllers */,
+				8966711F27C42DF7005DC831 /* Models */,
+				8966711E27C42DEF005DC831 /* Views */,
 				8966710727C424ED005DC831 /* AppDelegate.swift */,
 				8966710927C424ED005DC831 /* SceneDelegate.swift */,
 				8966710B27C424ED005DC831 /* ViewController.swift */,
@@ -62,6 +73,44 @@
 				8966711027C424ED005DC831 /* BottomSheet.xcdatamodeld */,
 			);
 			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		8966711E27C42DEF005DC831 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8966712327C42E42005DC831 /* ContentView.swift */,
+				8966712527C42E53005DC831 /* DetailsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8966711F27C42DF7005DC831 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8966712727C42EB6005DC831 /* DetailsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8966712027C42E00005DC831 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8966712127C42E0F005DC831 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		8966712227C42E21005DC831 /* ViewExtensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +183,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8966710C27C424ED005DC831 /* ViewController.swift in Sources */,
+				8966712427C42E42005DC831 /* ContentView.swift in Sources */,
 				8966710827C424ED005DC831 /* AppDelegate.swift in Sources */,
 				8966711227C424ED005DC831 /* BottomSheet.xcdatamodeld in Sources */,
+				8966712827C42EB6005DC831 /* DetailsModel.swift in Sources */,
 				8966710A27C424ED005DC831 /* SceneDelegate.swift in Sources */,
+				8966712627C42E53005DC831 /* DetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
