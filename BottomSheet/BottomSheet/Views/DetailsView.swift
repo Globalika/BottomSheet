@@ -8,13 +8,7 @@
 import SwiftUI
 
 struct DetailsView: View {
-    
     @Binding var model: DetailsModel?
-    var onDismiss: (() -> Void)?
-    
-    @Environment(\.presentationMode) var presentation
-    @State private var viewContentSize: CGSize = .zero
-    @GestureState private var translation: CGFloat = .zero
 
     var body: some View {
         VStack {

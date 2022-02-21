@@ -17,6 +17,13 @@
 		8966712827C42EB6005DC831 /* DetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966712727C42EB6005DC831 /* DetailsModel.swift */; };
 		8966712B27C42FB1005DC831 /* BottomSheetModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966712A27C42FB1005DC831 /* BottomSheetModifier.swift */; };
 		8966712D27C42FC7005DC831 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966712C27C42FC7005DC831 /* ViewExtensions.swift */; };
+		8966712F27C43083005DC831 /* BottomSheetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966712E27C43083005DC831 /* BottomSheetPresenter.swift */; };
+		8966713327C432EC005DC831 /* BottomSheetPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966713227C432EC005DC831 /* BottomSheetPresentationManager.swift */; };
+		8966713527C433BE005DC831 /* BottomSheetInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966713427C433BE005DC831 /* BottomSheetInteractionController.swift */; };
+		8966713727C4350F005DC831 /* BottomSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966713627C4350F005DC831 /* BottomSheetPresentationController.swift */; };
+		8966713927C4380E005DC831 /* PresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966713827C4380E005DC831 /* PresentAnimation.swift */; };
+		8966713C27C43828005DC831 /* DismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966713B27C43828005DC831 /* DismissAnimation.swift */; };
+		8966713E27C44804005DC831 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966713D27C44804005DC831 /* PresentationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +39,13 @@
 		8966712727C42EB6005DC831 /* DetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsModel.swift; sourceTree = "<group>"; };
 		8966712A27C42FB1005DC831 /* BottomSheetModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetModifier.swift; sourceTree = "<group>"; };
 		8966712C27C42FC7005DC831 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = BottomSheet/ViewModifiers/ViewExtensions.swift; sourceTree = SOURCE_ROOT; };
+		8966712E27C43083005DC831 /* BottomSheetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPresenter.swift; sourceTree = "<group>"; };
+		8966713227C432EC005DC831 /* BottomSheetPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPresentationManager.swift; sourceTree = "<group>"; };
+		8966713427C433BE005DC831 /* BottomSheetInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetInteractionController.swift; sourceTree = "<group>"; };
+		8966713627C4350F005DC831 /* BottomSheetPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPresentationController.swift; sourceTree = "<group>"; };
+		8966713827C4380E005DC831 /* PresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAnimation.swift; sourceTree = "<group>"; };
+		8966713B27C43828005DC831 /* DismissAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimation.swift; sourceTree = "<group>"; };
+		8966713D27C44804005DC831 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +78,7 @@
 		8966710627C424ED005DC831 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
+				8966713027C430C0005DC831 /* Animations */,
 				8966712927C42F8D005DC831 /* Presentation */,
 				8966712227C42E21005DC831 /* ViewExtensions */,
 				8966712127C42E0F005DC831 /* ViewModifiers */,
@@ -123,8 +138,22 @@
 		8966712927C42F8D005DC831 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				8966712E27C43083005DC831 /* BottomSheetPresenter.swift */,
+				8966713227C432EC005DC831 /* BottomSheetPresentationManager.swift */,
+				8966713427C433BE005DC831 /* BottomSheetInteractionController.swift */,
+				8966713627C4350F005DC831 /* BottomSheetPresentationController.swift */,
+				8966713D27C44804005DC831 /* PresentationController.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		8966713027C430C0005DC831 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				8966713827C4380E005DC831 /* PresentAnimation.swift */,
+				8966713B27C43828005DC831 /* DismissAnimation.swift */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,10 +226,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8966710C27C424ED005DC831 /* ViewController.swift in Sources */,
+				8966713C27C43828005DC831 /* DismissAnimation.swift in Sources */,
 				8966712B27C42FB1005DC831 /* BottomSheetModifier.swift in Sources */,
 				8966712427C42E42005DC831 /* ContentView.swift in Sources */,
+				8966713527C433BE005DC831 /* BottomSheetInteractionController.swift in Sources */,
 				8966710827C424ED005DC831 /* AppDelegate.swift in Sources */,
+				8966713727C4350F005DC831 /* BottomSheetPresentationController.swift in Sources */,
+				8966713E27C44804005DC831 /* PresentationController.swift in Sources */,
+				8966713927C4380E005DC831 /* PresentAnimation.swift in Sources */,
+				8966713327C432EC005DC831 /* BottomSheetPresentationManager.swift in Sources */,
 				8966712D27C42FC7005DC831 /* ViewExtensions.swift in Sources */,
+				8966712F27C43083005DC831 /* BottomSheetPresenter.swift in Sources */,
 				8966711227C424ED005DC831 /* BottomSheet.xcdatamodeld in Sources */,
 				8966712827C42EB6005DC831 /* DetailsModel.swift in Sources */,
 				8966710A27C424ED005DC831 /* SceneDelegate.swift in Sources */,

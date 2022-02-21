@@ -20,24 +20,24 @@ struct BottomSheetModifier<SheetContent: View>: ViewModifier {
             }
         })
     }
-}
-
-private struct BottomSheetContainer<Content: View>: UIViewControllerRepresentable {
-    let content: Content
-    @State var isPresented: Bool = false
-    var onDismiss: (() -> Void)?
     
-    func makeUIViewController(context: UIViewControllerRepresentableContext<BottomSheetContainer>) -> UIViewController {
-        let proxyController = BottomSheetPresenter<Content>()
-        proxyController.onDismiss = onDismiss
-        proxyController.hostingController = UIHostingController(rootView: content)
-        return proxyController
-    }
-    
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) { }
-    
-    static func dismantleUIViewController(_ uiViewController: UIViewController, coordinator: ()) {
-        guard let controller = uiViewController as? BottomSheetPresenter<Content> else { return }
-        controller.hostingController?.dismiss(animated: true, completion: nil)
+    private struct BottomSheetContainer<Content: View>: UIViewControllerRepresentable {
+        let content: Content
+        @State var isPresented: Bool = false
+        var onDismiss: (() -> Void)?
+        
+        func makeUIViewController(context: UIViewControllerRepresentableContext<BottomSheetContainer>) -> UIViewController {
+            let proxyController = BottomSheetPresenter<Content>()
+            proxyController.onDismiss = onDismiss
+            proxyController.hostingController = CustomUIHostingController(rootView: content)
+            return proxyController
+        }
+        
+        func updateUIViewController(_ uiViewController: UIViewController, context: Context) { }
+        
+        static func dismantleUIViewController(_ uiViewController: UIViewController, coordinator: ()) {
+            guard let controller = uiViewController as? BottomSheetPresenter<Content> else { return }
+            controller.hostingController?.dismiss(animated: true, completion: nil)
+        }
     }
 }
