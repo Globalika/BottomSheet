@@ -29,7 +29,7 @@ struct BottomSheetModifier<SheetContent: View>: ViewModifier {
         func makeUIViewController(context: UIViewControllerRepresentableContext<BottomSheetContainer>) -> UIViewController {
             let proxyController = BottomSheetPresenter<Content>()
             proxyController.onDismiss = onDismiss
-            proxyController.hostingController = BottomSheetHostingController(rootView: content)
+            proxyController.hostingController = BottomSheetHostingController(content: content)
             return proxyController
         }
         

@@ -35,8 +35,23 @@ class BottomSheetPresenter<Content: View>: UIViewController {
     }
 }
 
-class BottomSheetHostingController<Content>: UIHostingController<Content> where Content: View {
+class BottomSheetHostingController<Content: View>: UIViewController{
     var onDismiss: (() -> Void)?
+    var content: Content
+    
+    init(content: Content) {
+        self.content = content
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    var scrollableContent: UIScrollView = {
+        let view = UIScrollView()
+        return view
+    }()
     
     var dismissButton: UIButton = {
         var button = UIButton()
@@ -106,7 +121,7 @@ class BottomSheetHostingController<Content>: UIHostingController<Content> where 
     }
     
     func addChildView() {
-        let child = UIHostingController<Content>(rootView: self.rootView)
+        let child = UIHostingController<Content>(rootView: content)
         child.view.backgroundColor = .white
         self.addChild(child)
         child.view.translatesAutoresizingMaskIntoConstraints = false

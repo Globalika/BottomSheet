@@ -11,9 +11,11 @@ struct DetailsView: View {
     @Binding var model: DetailsModel?
 
     var body: some View {
-        VStack {
-            title
-            sections
+        ScrollView {
+            VStack {
+                title
+                sections
+            }
         }
     }
     
