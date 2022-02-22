@@ -15,6 +15,7 @@ class BottomSheetPresentationController: PresentationController {
             self.dimmView.alpha = 1
         }
     }
+    
     override func presentationTransitionDidEnd(_ completed: Bool) {
         super.presentationTransitionDidEnd(completed)
     
@@ -49,7 +50,6 @@ class BottomSheetPresentationController: PresentationController {
             block()
             return
         }
-    
         coordinator.animate(alongsideTransition: { (_) in
             block()
         }, completion: nil)
@@ -61,7 +61,7 @@ class BottomSheetPresentationController: PresentationController {
     
     private lazy var dimmView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(white: 0, alpha: 0.3)
+        view.backgroundColor = UIColor(.black).withAlphaComponent(0.5)
         view.alpha = 0
         let recognizer = UITapGestureRecognizer(target: self,
                                                 action: #selector(handleTap(recognizer:)))

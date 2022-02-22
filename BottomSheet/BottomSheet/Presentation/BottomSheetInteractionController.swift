@@ -32,8 +32,8 @@ class BottomSheetInteractionController: UIPercentDrivenInteractiveTransition {
         
         set { }
     }
-    var direction: TransitionDirection = .present
     
+    var direction: TransitionDirection = .present
     @objc private func handle(recognizer r: UIPanGestureRecognizer) {
         switch direction {
         case .present:

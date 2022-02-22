@@ -141,8 +141,8 @@
 				8966712E27C43083005DC831 /* BottomSheetPresenter.swift */,
 				8966713227C432EC005DC831 /* BottomSheetPresentationManager.swift */,
 				8966713427C433BE005DC831 /* BottomSheetInteractionController.swift */,
-				8966713627C4350F005DC831 /* BottomSheetPresentationController.swift */,
 				8966713D27C44804005DC831 /* PresentationController.swift */,
+				8966713627C4350F005DC831 /* BottomSheetPresentationController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
