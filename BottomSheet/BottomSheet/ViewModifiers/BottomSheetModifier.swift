@@ -34,10 +34,5 @@ struct BottomSheetModifier<SheetContent: View>: ViewModifier {
         }
         
         func updateUIViewController(_ uiViewController: UIViewController, context: Context) { }
-        
-        static func dismantleUIViewController(_ uiViewController: UIViewController, coordinator: ()) {
-            guard let controller = uiViewController as? BottomSheetPresenter<Content> else { return }
-            controller.hostingController?.dismiss(animated: true, completion: nil)
-        }
     }
 }

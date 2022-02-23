@@ -15,8 +15,8 @@ struct DetailsView: View {
             VStack {
                 title
                 sections
-            }
-        }
+            }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        }//.frame(maxWidth: .infinity, maxHeight: 200)
     }
     
     @ViewBuilder

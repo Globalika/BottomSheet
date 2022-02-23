@@ -52,17 +52,14 @@ extension BottomSheetInteractionController {
         case .changed:
             let increment = -r.incrementToBottom(maxTranslation: maxTranslation)
             update(percentComplete + increment)
-            
         case .ended, .cancelled:
             if r.isProjectedToDownHalf(maxTranslation: maxTranslation) {
                 cancel()
             } else {
                 finish()
             }
-            
         case .failed:
             cancel()
-            
         default:
             break
         }
@@ -75,20 +72,16 @@ extension BottomSheetInteractionController {
             if !isRunning {
                 presentedController?.dismiss(animated: true)
             }
-        
         case .changed:
             update(percentComplete + r.incrementToBottom(maxTranslation: maxTranslation))
-            
         case .ended, .cancelled:
             if r.isProjectedToDownHalf(maxTranslation: maxTranslation) {
                 finish()
             } else {
                 cancel()
             }
-
         case .failed:
             cancel()
-            
         default:
             break
         }

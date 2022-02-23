@@ -9,7 +9,7 @@ import UIKit
 
 class BottomSheetPresentationManager: NSObject, UIViewControllerTransitioningDelegate {
     private let interactionController = BottomSheetInteractionController()
-    
+
     func presentationController(forPresented presented: UIViewController,
                                 presenting: UIViewController?,
                                 source: UIViewController) -> UIPresentationController? {

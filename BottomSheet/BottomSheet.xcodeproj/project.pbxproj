@@ -24,6 +24,7 @@
 		8966713927C4380E005DC831 /* PresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966713827C4380E005DC831 /* PresentAnimation.swift */; };
 		8966713C27C43828005DC831 /* DismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966713B27C43828005DC831 /* DismissAnimation.swift */; };
 		8966713E27C44804005DC831 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966713D27C44804005DC831 /* PresentationController.swift */; };
+		8966714027C51AA3005DC831 /* BottomSheetHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966713F27C51AA3005DC831 /* BottomSheetHostingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		8966713827C4380E005DC831 /* PresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAnimation.swift; sourceTree = "<group>"; };
 		8966713B27C43828005DC831 /* DismissAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimation.swift; sourceTree = "<group>"; };
 		8966713D27C44804005DC831 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		8966713F27C51AA3005DC831 /* BottomSheetHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetHostingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				8966712E27C43083005DC831 /* BottomSheetPresenter.swift */,
+				8966713F27C51AA3005DC831 /* BottomSheetHostingController.swift */,
 				8966713227C432EC005DC831 /* BottomSheetPresentationManager.swift */,
 				8966713427C433BE005DC831 /* BottomSheetInteractionController.swift */,
 				8966713D27C44804005DC831 /* PresentationController.swift */,
@@ -235,6 +238,7 @@
 				8966713E27C44804005DC831 /* PresentationController.swift in Sources */,
 				8966713927C4380E005DC831 /* PresentAnimation.swift in Sources */,
 				8966713327C432EC005DC831 /* BottomSheetPresentationManager.swift in Sources */,
+				8966714027C51AA3005DC831 /* BottomSheetHostingController.swift in Sources */,
 				8966712D27C42FC7005DC831 /* ViewExtensions.swift in Sources */,
 				8966712F27C43083005DC831 /* BottomSheetPresenter.swift in Sources */,
 				8966711227C424ED005DC831 /* BottomSheet.xcdatamodeld in Sources */,
