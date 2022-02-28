@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class BottomSheetHostingController<Content: View>: UIViewController, UIScrollViewDelegate {
+class BottomSheetHostingController<Content: View>: UIViewController {
     var onDismiss: (() -> Void)?
     var content: Content
     
@@ -26,17 +26,18 @@ class BottomSheetHostingController<Content: View>: UIViewController, UIScrollVie
         fatalError("init(coder:) has not been implemented")
     }
     var hostingController: UIHostingController<Content>
+    
     var scrollView: UIScrollView = {
         let view = UIScrollView()
         view.showsVerticalScrollIndicator = false
         view.translatesAutoresizingMaskIntoConstraints = false
         view.alwaysBounceVertical = false
+        view.bounces = false
         return view
     }()
     
     var contentView: UIView = {
         let view = UIView()
-        
         view.translatesAutoresizingMaskIntoConstraints = false
         view.autoresizesSubviews = true
         return view
@@ -60,7 +61,7 @@ class BottomSheetHostingController<Content: View>: UIViewController, UIScrollVie
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+
     override func viewDidLoad() {
         configureController()
     }
@@ -90,8 +91,8 @@ class BottomSheetHostingController<Content: View>: UIViewController, UIScrollVie
         NSLayoutConstraint.activate([
             dismissButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             dismissButton.topAnchor.constraint(equalTo: view.topAnchor),
-            dismissButton.widthAnchor.constraint(equalToConstant: 24),
-            dismissButton.heightAnchor.constraint(equalToConstant: 24),
+            dismissButton.widthAnchor.constraint(equalToConstant: 20),
+            dismissButton.heightAnchor.constraint(equalToConstant: 20),
         ])
     }
     
@@ -119,10 +120,10 @@ class BottomSheetHostingController<Content: View>: UIViewController, UIScrollVie
     func setScrollViewConstraints() {
         scrollView.backgroundColor = .white
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 24),
-            scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 24),
-            scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -24),
-            scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -24)
+            scrollView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20),
+            scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
+            scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20),
+            scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20)
         ])
     }
     func addContentView() {
@@ -131,12 +132,11 @@ class BottomSheetHostingController<Content: View>: UIViewController, UIScrollVie
         self.addChild(hostingController)
         scrollView.addSubview(hostingController.view)
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-        print(hostingController.view.frame.height/2)
         NSLayoutConstraint.activate([
             hostingController.view.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
             hostingController.view.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
             hostingController.view.firstBaselineAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
-            hostingController.view.lastBaselineAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            hostingController.view.lastBaselineAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -4),
             hostingController.view.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             hostingController.view.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
         ])
