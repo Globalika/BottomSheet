@@ -18,10 +18,11 @@ class PresentationController: UIPresentationController {
                                                                  withHorizontalFittingPriority: .required,
                                                                  verticalFittingPriority: .defaultLow).height
         let originY = max(containerView.frame.height - targetHeight, containerView.frame.height/2)
+        let height = min(UIScreen.main.bounds.height/2, targetHeight)
         return CGRect(x: 0,
                       y: originY,
                       width: targetWidth,
-                      height: targetHeight)
+                      height: height)
     }
     
     override func presentationTransitionWillBegin() {

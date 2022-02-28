@@ -8,7 +8,6 @@
 import UIKit
 
 class BottomSheetInteractionController: UIPercentDrivenInteractiveTransition {
-    
     private weak var presentedController: UIViewController?
     private var panRecognizer: UIPanGestureRecognizer?
     

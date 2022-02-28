@@ -32,7 +32,7 @@ struct BottomSheetModifier<SheetContent: View>: ViewModifier {
             proxyController.hostingController = BottomSheetHostingController(content: content)
             return proxyController
         }
-        
         func updateUIViewController(_ uiViewController: UIViewController, context: Context) { }
+        
     }
 }

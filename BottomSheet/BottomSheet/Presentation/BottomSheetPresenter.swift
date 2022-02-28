@@ -19,6 +19,6 @@ class BottomSheetPresenter<Content: View>: UIViewController {
         hostingController.onDismiss = onDismiss
         hostingController.transitioningDelegate = transition
         hostingController.modalPresentationStyle = .custom
-        present(hostingController, animated: true, completion: nil)
+        present(hostingController, animated: true)
     }
 }

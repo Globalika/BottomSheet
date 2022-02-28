@@ -11,12 +11,10 @@ struct DetailsView: View {
     @Binding var model: DetailsModel?
 
     var body: some View {
-        ScrollView {
             VStack {
                 title
                 sections
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
-        }//.frame(maxWidth: .infinity, maxHeight: 200)
     }
     
     @ViewBuilder

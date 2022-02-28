@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class BottomSheetHostingController<Content: View>: UIViewController {
+class BottomSheetHostingController<Content: View>: UIViewController, UIScrollViewDelegate {
     var onDismiss: (() -> Void)?
     var content: Content
     
@@ -18,16 +18,27 @@ class BottomSheetHostingController<Content: View>: UIViewController {
     
     init(content: Content) {
         self.content = content
+        hostingController = UIHostingController(rootView: content)
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    var scrollableContent: UIScrollView = {
+    var hostingController: UIHostingController<Content>
+    var scrollView: UIScrollView = {
         let view = UIScrollView()
-        view.alwaysBounceVertical = true
+        view.showsVerticalScrollIndicator = false
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.alwaysBounceVertical = false
+        return view
+    }()
+    
+    var contentView: UIView = {
+        let view = UIView()
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.autoresizesSubviews = true
         return view
     }()
     
@@ -46,13 +57,14 @@ class BottomSheetHostingController<Content: View>: UIViewController {
         view.backgroundColor = .darkGray
         view.layer.cornerRadius = 3
         view.layer.masksToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     override func viewDidLoad() {
         configureController()
     }
-    
+
     @objc func dismissSelf() {
         self.dismiss(animated: true)
     }
@@ -65,7 +77,8 @@ class BottomSheetHostingController<Content: View>: UIViewController {
     func funcSetupSubViews() {
         setupDismissButton()
         setupDragableIndicator()
-        addChildView()
+        setupScrollView()
+        addContentView()
     }
     
     func setupDismissButton() {
@@ -74,7 +87,6 @@ class BottomSheetHostingController<Content: View>: UIViewController {
     }
     
     func setDismissButtonConstraints() {
-        dismissButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             dismissButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             dismissButton.topAnchor.constraint(equalTo: view.topAnchor),
@@ -89,7 +101,6 @@ class BottomSheetHostingController<Content: View>: UIViewController {
     }
     
     func setDragableIndicatorConstraints() {
-        dragableIndicator.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             dragableIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             dragableIndicator.topAnchor.constraint(equalTo: view.topAnchor, constant: 6),
@@ -97,34 +108,38 @@ class BottomSheetHostingController<Content: View>: UIViewController {
             dragableIndicator.heightAnchor.constraint(equalToConstant: 6),
         ])
     }
-    
-//    func setupScrollabelView() {
-//        view.addSubview(scrollableContent)
-//        setScrollabelViewConstraints()
-//    }
-//
-//    func setScrollabelViewConstraints() {
-//        scrollableContent.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            scrollableContent.topAnchor.constraint(equalTo: self.dismissButton.bottomAnchor),
-//            scrollableContent.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -24),
-//            scrollableContent.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 24),
-//            scrollableContent.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -24)
-//        ])
-//    }
-    
-    func addChildView() {
-        let child = UIHostingController<Content>(rootView: content)
-        child.view.backgroundColor = .white
-        self.addChild(child)
-        child.view.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(child.view)
-        child.didMove(toParent: self)
+
+    func setupScrollView() {
+        view.addSubview(scrollView)
+        scrollView.backgroundColor = .clear
+        setScrollViewConstraints()
+        
+    }
+
+    func setScrollViewConstraints() {
+        scrollView.backgroundColor = .white
         NSLayoutConstraint.activate([
-            child.view.topAnchor.constraint(equalTo: self.dismissButton.bottomAnchor),
-            child.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -24),
-            child.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 24),
-            child.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -24)
+            scrollView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 24),
+            scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 24),
+            scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -24),
+            scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -24)
         ])
+    }
+    func addContentView() {
+        hostingController.view.backgroundColor = .clear
+        hostingController.willMove(toParent: self)
+        self.addChild(hostingController)
+        scrollView.addSubview(hostingController.view)
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        print(hostingController.view.frame.height/2)
+        NSLayoutConstraint.activate([
+            hostingController.view.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+            hostingController.view.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
+            hostingController.view.firstBaselineAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
+            hostingController.view.lastBaselineAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            hostingController.view.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            hostingController.view.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
+        ])
+        hostingController.didMove(toParent: self)
     }
 }
