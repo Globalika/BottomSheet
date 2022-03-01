@@ -135,8 +135,8 @@ class BottomSheetHostingController<Content: View>: UIViewController {
         NSLayoutConstraint.activate([
             hostingController.view.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
             hostingController.view.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
-            hostingController.view.firstBaselineAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
-            hostingController.view.lastBaselineAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -4),
+            hostingController.view.firstBaselineAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor, constant: 16),
+            hostingController.view.lastBaselineAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -6),
             hostingController.view.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             hostingController.view.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
         ])
