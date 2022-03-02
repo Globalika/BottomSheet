@@ -25,7 +25,18 @@
 		8966713C27C43828005DC831 /* DismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966713B27C43828005DC831 /* DismissAnimation.swift */; };
 		8966713E27C44804005DC831 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966713D27C44804005DC831 /* PresentationController.swift */; };
 		8966714027C51AA3005DC831 /* BottomSheetHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966713F27C51AA3005DC831 /* BottomSheetHostingController.swift */; };
+		89EE53DC27CE524500899269 /* BottomSheetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EE53DB27CE524500899269 /* BottomSheetTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89EE53DD27CE524500899269 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 896670FC27C424ED005DC831 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8966710327C424ED005DC831;
+			remoteInfo = BottomSheet;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8966710427C424ED005DC831 /* BottomSheet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomSheet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,10 +59,19 @@
 		8966713B27C43828005DC831 /* DismissAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimation.swift; sourceTree = "<group>"; };
 		8966713D27C44804005DC831 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		8966713F27C51AA3005DC831 /* BottomSheetHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetHostingController.swift; sourceTree = "<group>"; };
+		89EE53D927CE524500899269 /* BottomSheetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BottomSheetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89EE53DB27CE524500899269 /* BottomSheetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8966710127C424ED005DC831 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89EE53D627CE524500899269 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -65,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				8966710627C424ED005DC831 /* BottomSheet */,
+				89EE53DA27CE524500899269 /* BottomSheetTests */,
 				8966710527C424ED005DC831 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				8966710427C424ED005DC831 /* BottomSheet.app */,
+				89EE53D927CE524500899269 /* BottomSheetTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +181,14 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		89EE53DA27CE524500899269 /* BottomSheetTests */ = {
+			isa = PBXGroup;
+			children = (
+				89EE53DB27CE524500899269 /* BottomSheetTests.swift */,
+			);
+			path = BottomSheetTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,6 +209,24 @@
 			productReference = 8966710427C424ED005DC831 /* BottomSheet.app */;
 			productType = "com.apple.product-type.application";
 		};
+		89EE53D827CE524500899269 /* BottomSheetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89EE53DF27CE524500899269 /* Build configuration list for PBXNativeTarget "BottomSheetTests" */;
+			buildPhases = (
+				89EE53D527CE524500899269 /* Sources */,
+				89EE53D627CE524500899269 /* Frameworks */,
+				89EE53D727CE524500899269 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89EE53DE27CE524500899269 /* PBXTargetDependency */,
+			);
+			name = BottomSheetTests;
+			productName = BottomSheetTests;
+			productReference = 89EE53D927CE524500899269 /* BottomSheetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -191,6 +239,10 @@
 				TargetAttributes = {
 					8966710327C424ED005DC831 = {
 						CreatedOnToolsVersion = 13.0;
+					};
+					89EE53D827CE524500899269 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 8966710327C424ED005DC831;
 					};
 				};
 			};
@@ -208,6 +260,7 @@
 			projectRoot = "";
 			targets = (
 				8966710327C424ED005DC831 /* BottomSheet */,
+				89EE53D827CE524500899269 /* BottomSheetTests */,
 			);
 		};
 /* End PBXProject section */
@@ -218,6 +271,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8966711427C424EF005DC831 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89EE53D727CE524500899269 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +308,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		89EE53D527CE524500899269 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89EE53DC27CE524500899269 /* BottomSheetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		89EE53DE27CE524500899269 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8966710327C424ED005DC831 /* BottomSheet */;
+			targetProxy = 89EE53DD27CE524500899269 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8966711927C424EF005DC831 /* Debug */ = {
@@ -419,6 +495,52 @@
 			};
 			name = Release;
 		};
+		89EE53E027CE524500899269 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4AZ42S98X5;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Volodymyr-Seredovych.BottomSheetTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BottomSheet.app/BottomSheet";
+			};
+			name = Debug;
+		};
+		89EE53E127CE524500899269 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4AZ42S98X5;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Volodymyr-Seredovych.BottomSheetTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BottomSheet.app/BottomSheet";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -436,6 +558,15 @@
 			buildConfigurations = (
 				8966711C27C424EF005DC831 /* Debug */,
 				8966711D27C424EF005DC831 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89EE53DF27CE524500899269 /* Build configuration list for PBXNativeTarget "BottomSheetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89EE53E027CE524500899269 /* Debug */,
+				89EE53E127CE524500899269 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
